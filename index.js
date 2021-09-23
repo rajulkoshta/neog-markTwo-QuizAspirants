@@ -4,12 +4,12 @@ var readlineSync = require("readline-sync");
 var score = 0;
 
 // username
-var userName = readlineSync.question("What is your name? ");
+var userName = readlineSync.question("What is your name?\n :");
 console.log("________________");
 
 // welcome
 console.log(chalk.bgCyan("Welcome " + userName +
-" to this amazing quiz to cheack whether you know about Rajul or not?")+"\n"+chalk.magenta("you are currently in level 1 proceed ......."));
+" to this amazing quiz to cheack whether you know about the aspirants series or not?")+"\n"+chalk.magenta("you are currently in level 1 proceed ......."));
 console.log("________________");
 
 
@@ -29,36 +29,44 @@ var highScore = [
   ]
 // question bank
 var questions = [{
-  question:"which is my favourite color ? ",
-  answer:"blue",
+  question:"Which production house created the web series Aspirants ? \na.Dice Media \nb.AIB \nc.The Viral Fever \nd.East India Comedy\n ",
+  answer:"c",
 },
 {
-  question:"what is my fav sad song? ",
-  answer:"dil",
+  question:"What is the name of the (or Who is the) senior living in the room next to Abhilash’s? \na.Sandesh Bhaiyya \nb.Sandeep Bhaiyya \nc.Pardeep Bhaiyya \nd.Ramesh Bhaiyya\n ",
+  answer:"b",
 },
 {
-  question:"what is the name of my pet? ",
-  answer:"cherry",
+  question:"Dhairya marries Walia Uncle in the show. \na.True \nb.False\n",
+  answer:"b",
 },
 {
-  question:"what is the name of my first crush? ",
-  answer:"shubhangni",
+  question:"Who is getting married in the series?\na.SK\nb.Sandeep Bhaiyya\nc.Guri \nd.Walia Uncle\n",
+  answer:"c",
 },
 {
-  question:"with whom I ride a motorbike for the first time ? ",
-  answer:"abhay",
+  question:"Abhilash is the DM of which city?\naDelhi\nb.Kanpur\nc.Kashipur\nd.Rampur\n",
+  answer:"d",
 },
 {
-  question:"what is my birthday date? ",
-  answer:"10",
+  question:"Which place in the series is considered a hub for UPSC coaching?\na.Rajeev GandhiNagar\nb.Rajendra Nagar\nc.Vikaspuri\nd.Mayapuri\n",
+  answer:"b",
 },
 {
-  question:"which food receipe I love the most? ",
-  answer:"paneer",
+  question:"Abhilash, SK, and Guri were called Table in college.\na.True\nb.False\n",
+  answer:"b",
 },
 {
-  question:"how much I have scored in my 10th? ",
-  answer:"9",
+  question:"Sandeep Bhaiyya passes the ___ exam at the series’ end.\na.UPSC\nb.JEE\nc.PCS\nd.RRB\n",
+  answer:"c",
+},
+{
+  question:"Who says “Plan B Hona Chaahiye Bhai Abhilash, Bahut Zaroori Hai”?\na.Abhilash’s PA\nb.SK\nc.Guri\nd.Walia Aunty\n",
+  answer:"b",
+},
+{
+  question:"Where does Abhilash meet Dhairya for the first time?\na.Admission office\nb.Library\nc.Movie Theatre\nd.Tea stall\n",
+  answer:"a",
 },
 ];
 
@@ -67,10 +75,10 @@ var questions = [{
 
 function play(question,answer){
   var userAnswer=readlineSync.question(question);
-  console.log(chalk.bgYellow("Player entered : " + userAnswer));
+  console.log(chalk.bgYellow("Player entered :" + userAnswer));
   if(userAnswer===answer){
     score = score + 1;
-    console.log(chalk.magenta("right, your score is : " + score));
+    console.log(chalk.magenta("Right, your score is : " + score));
   }
   else{
     console.log(chalk.magenta("no , you are wrong"));
@@ -93,7 +101,7 @@ console.log("your final score: " + score);
 // if user want to know high score
 var userWantToKnow = readlineSync.question("do you want to know the high scores?(y/n) ");
 var count = 0;
-if(userWantToKnow === "y"){
+if(userWantToKnow==="y"){
 
    for(var j = 0 ; j < highScore.length ; j++){
     
