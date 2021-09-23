@@ -78,10 +78,10 @@ function play(question,answer){
   console.log(chalk.bgYellow("Player entered :" + userAnswer));
   if(userAnswer===answer){
     score = score + 1;
-    console.log(chalk.magenta("Right, your score is : " + score));
+    console.log(chalk.magenta("Right, your current score is : " + score));
   }
   else{
-    console.log(chalk.magenta("no , you are wrong"));
+    console.log(chalk.magenta("wrong, your current score is : " + score));
   }
   console.log("________________")
 }
